@@ -147,8 +147,7 @@ A license has not yet been specified. Please add a license file before distribut
 ## 🖥️ Application Preview
 
 <p align="center">
-  <img src="NetPulse-Internet-Usage-Monitor
-/Dashnoard.png" alt="NetPulse Internet Usage Monitor Dashboard" width="900">
+  <img src="main/Dashnoard.pngg" alt="NetPulse Internet Usage Monitor Dashboard" width="900">
 </p>
 
 <p align="center">
