@@ -1,12 +1,16 @@
 # ⚡ NetPulse — Internet Usage Monitor
 
-\<p align="center">
-&#x20; \<strong>Monitor your network. Understand your usage.\</strong>
-\</p>
+<p align="center">
+  <strong>Monitor your network. Understand your usage.</strong>
+</p>
 
-\<p align="center">
-&#x20; A lightweight network monitoring dashboard built with Python and modern web technologies.
-\</p>
+<p align="center">
+  A lightweight network monitoring dashboard built with Python and modern web technologies.
+</p>
+
+<p align="center">
+  <img src="screenshots/dashboard.png" alt="NetPulse Dashboard Preview" width="900">
+</p>
 
 ---
 
@@ -23,92 +27,163 @@ Whether you want to monitor your connection, analyze your data consumption, or k
 - 📡 **Real-Time Network Monitoring** — Track download and upload speeds.
 - 📊 **Usage Analytics** — Review daily and monthly data consumption.
 - 🕒 **Historical Statistics** — Explore hourly and daily network usage.
-- 🔔 **Desktop Notifications** — Receive periodic summaries of your network activity.
-- 🖥️ **Network Interface Selection** — Monitor a selected network adapter.
-- 💾 **Local Data Storage** — Save usage statistics with SQLite.
+- 🔔 **Desktop Notifications** — Receive periodic summaries of network activity.
+- 🖥️ **Network Interface Selection** — Choose a network adapter to monitor.
+- 💾 **Local Data Storage** — Save usage statistics using SQLite.
 - 🔒 **Local-First Design** — No cloud database or user account required for local monitoring.
-- ⚙️ **Python-Based Backend** — Built with lightweight, widely used technologies.
+- 🌐 **Web-Based Dashboard** — View network statistics through your browser.
 
 ## 🛠️ Built With
 
-| Technology         | Purpose                                |
-| ------------------ | -------------------------------------- |
-| Python             | Core application logic                 |
-| Flask              | Local web server and API               |
-| psutil             | System and network statistics          |
-| SQLite             | Local data storage                     |
-| Plyer              | Desktop notifications                  |
-| React & TypeScript | Frontend source code                   |
-| Vite               | Frontend development and build tooling |
+| Technology | Purpose |
+|---|---|
+| Python | Core application logic |
+| Flask | Local web server and API |
+| psutil | System and network statistics |
+| SQLite | Local data storage |
+| Plyer | Desktop notifications |
+| React | Frontend interface |
+| TypeScript | Frontend development |
+| Vite | Frontend development and build tooling |
+
+## 📁 Project Structure
+
+```text
+NetPulse/
+├── app.py
+├── database.py
+├── monitor.py
+├── notification.py
+├── requirements.txt
+├── package.json
+├── package-lock.json
+├── index.html
+├── templates/
+│   └── index.html
+├── static/
+│   ├── app.js
+│   └── style.css
+├── src/
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── index.css
+│   └── utils/
+├── vite.config.ts
+└── tsconfig.json
+```
 
 ## 🚀 Getting Started
 
-### Prerequisites
+Follow the steps below to run NetPulse on your computer.
+
+### 📋 Prerequisites
 
 - Python 3.10 or newer
 - pip
+- Git (optional if downloading the repository as a ZIP file)
 - Node.js and npm, if building the React frontend separately
 
-### Installation
+### 1. Clone the Repository
 
-**1. Clone the repository**
+Replace the example URL with your actual GitHub repository URL.
 
 ```bash
 git clone https://github.com/amiraliad06-cpu/NetPulse-Internet-Usage-Monitor
 cd NetPulse-Internet-Usage-Monitor
 ```
 
-**2. Create a virtual environment**
+Alternatively, download the repository as a ZIP file from GitHub and extract it.
+
+### 2. Create a Virtual Environment
 
 ```bash
 python -m venv .venv
 ```
 
-**3. Activate the environment**
+### 3. Activate the Environment
 
-Windows:
+**Windows:**
 
 ```bat
 .venv\Scripts\activate
 ```
 
-Linux / macOS:
+**Linux / macOS:**
 
 ```bash
 source .venv/bin/activate
 ```
 
-**4. Install dependencies**
+### 4. Install Dependencies
 
 ```bash
+python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-**5. Run the application**
+### 5. Start the Application
 
 ```bash
 python app.py
 ```
 
-**6. Open the dashboard**
+### 6. Open the Dashboard
 
-Visit:
+Open your browser and visit:
 
-```text
-http://127.0.0.1:5000
-```
+<p align="center">
+  <a href="http://127.0.0.1:5000">
+    <strong>http://127.0.0.1:5000</strong>
+  </a>
+</p>
 
 Keep the terminal open while using the application.
 
-## 💾 Data & Privacy
+## 📊 How It Works
 
-NetPulse is designed for local monitoring. Usage statistics can be stored in an SQLite database on the user's computer.
+NetPulse collects network traffic statistics from the operating system using Python libraries.
 
-The application does not require a cloud database or an online account for its local monitoring workflow. Network statistics are collected from the operating system and may vary from the usage figures reported by an internet service provider.
+The Flask backend processes monitoring data and provides it to the dashboard through local API endpoints. Usage records are stored in an SQLite database, allowing the application to calculate totals and display historical statistics.
+
+The monitoring process runs in the background while the application is active.
+
+## 💾 Data Storage
+
+NetPulse stores usage records locally in an SQLite database.
+
+The database is created automatically when the application initializes and is stored at:
+
+```text
+data/usage.db
+```
+
+No cloud database or online account is required for the local monitoring workflow.
+
+**Note:** Usage history depends on the application's collection process. Data may not represent network traffic that occurred before monitoring began or while the application was not running.
+
+## 🔐 Privacy
+
+NetPulse is designed primarily for local use.
+
+- Usage statistics are stored on the local computer.
+- No cloud account is required for the core monitoring workflow.
+- Network information is collected from operating system interfaces.
+- Local traffic statistics may differ from those reported by an internet service provider.
+
+Avoid exposing personal network information or database files when sharing screenshots or publishing project files.
+
+## ⚠️ Limitations
+
+- Monitoring accuracy depends on operating system network counters.
+- The application does not inherently identify the traffic usage of every individual program.
+- The local server must remain running for live monitoring.
+- Desktop notifications depend on operating system permissions and library support.
+- Historical statistics are limited to the data collected and saved by the application.
+- The React frontend and Flask dashboard are both present in the source tree; the intended production frontend and build workflow should be verified for each release.
 
 ## 🗺️ Roadmap
 
-Potential future improvements include:
+Potential future improvements:
 
 - [ ] Export usage reports to CSV
 - [ ] Configurable data usage limits
@@ -118,13 +193,7 @@ Potential future improvements include:
 - [ ] Enhanced dashboard visualizations
 - [ ] Standalone desktop installer
 - [ ] Additional language support
-
-## ⚠️ Limitations
-
-- Monitoring accuracy depends on operating system network counters.
-- The application does not inherently identify the traffic usage of every individual program.
-- The local server must remain running for live monitoring.
-- The React frontend may require a separate build process, depending on the project configuration.
+- [ ] Improved startup and background monitoring options
 
 ## 🤝 Contributing
 
@@ -132,24 +201,22 @@ Contributions, suggestions, and bug reports are welcome.
 
 If you find a bug or have an idea for improvement, feel free to open an issue or submit a pull request.
 
+When contributing, please keep changes focused, document important behavior, and test the application before submitting your changes.
+
 ## 📄 License
 
-A license has not yet been specified. Please add a license file before distributing the project for reuse or modification.
+No license has been specified yet.
 
----
+Before distributing the project for reuse, modification, or redistribution, add a suitable open-source license and include the corresponding `LICENSE` file.
 
-\<p align="center">
-&#x20; \<strong>NetPulse\</strong>\<br>
-&#x20; \<em>See your network. Track your data. Stay informed.\</em>
-\</p>
+## 👨‍💻 Project
 
-
-## 🖥️ Application Preview
+**NetPulse — Internet Usage Monitor**
 
 <p align="center">
-  <img src="main/Dashnoard.pngg" alt="NetPulse Internet Usage Monitor Dashboard" width="900">
+  <strong>See your network. Track your data. Stay informed.</strong>
 </p>
 
 <p align="center">
-  <em>A real screenshot of the NetPulse dashboard.</em>
+  Built with Python and modern web technologies.
 </p>
