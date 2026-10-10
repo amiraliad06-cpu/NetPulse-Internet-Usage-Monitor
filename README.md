@@ -142,3 +142,15 @@ A license has not yet been specified. Please add a license file before distribut
 &#x20; \<strong>NetPulse\</strong>\<br>
 &#x20; \<em>See your network. Track your data. Stay informed.\</em>
 \</p>
+
+
+## 🖥️ Application Preview
+
+<p align="center">
+  <img src="NetPulse-Internet-Usage-Monitor
+/Dashnoard.png" alt="NetPulse Internet Usage Monitor Dashboard" width="900">
+</p>
+
+<p align="center">
+  <em>A real screenshot of the NetPulse dashboard.</em>
+</p>
